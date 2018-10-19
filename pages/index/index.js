@@ -1,5 +1,5 @@
 // pages/index/index.js
-Page({
+Page({ // 注册页面
 
   /**
    * 页面的初始数据
@@ -47,5 +47,9 @@ Page({
 		}
 	},
 
- 
+	handleClick(){
+		wx.redirectTo({
+			url: '/pages/list/list'
+		})
+	}
 })

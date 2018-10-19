@@ -3,11 +3,7 @@
 	<image wx:if='{{!isShow}}' class='index_img' src='{{userInfo.avatarUrl}}'></image>
 	<button wx:else='{{isShow}}'  bindgetuserinfo='handleGetUserInfo' open-type='getUserInfo'>点击获取登录信息</button>
 	<text class='userName'>hello {{userInfo.nickName}}</text>
-	<view class='goStudy'>
-
-
-
-
+	<view catchtap='handleClick' class='goStudy'>
 		<text>开启小程序之旅</text>
 	</view>
 </view>
