@@ -19,11 +19,6 @@
 	vertical-align: middle;
 }
 
-.company {
-	margin-left: 10rpx;
-	font-size: 40rpx;
-	font-weight: bold;
-}
 
 .tmp_img {
 	width: 100%;
@@ -31,11 +26,7 @@
 	margin: 10rpx 0;
 }
 
-.content {
-	font-size: 36rpx;
-	text-indent: 36rpx;
-	letter-spacing: 3rpx;
-}
+
 
 .star_view_container image {
 	width: 32rpx;

@@ -1,0 +1,46 @@
+/* pages/detail/detail.wxss */
+.detailContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.detail_img {
+	width: 100%;
+	height: 460rpx;
+}
+.avatar_date {
+	padding: 10rpx;
+}
+.avatar_date image {
+	width: 64rpx;
+	height: 64rpx;
+	vertical-align: middle;
+}
+
+.avatar_date text {
+	font-size: 32rpx;
+	margin-left: 6rpx;
+	vertical-align: middle;
+}
+.imgContainer {
+	float: right;
+	margin-right: 30rpx;
+}
+
+.imgContainer image {
+	width: 90rpx;
+	height: 90rpx;
+	margin-right: 10rpx;
+}
+.collection_share_container {
+	position: relative;
+}
+.line {
+	width: 90%;
+	height: 1rpx;
+	background: #eee;
+	position: absolute;
+	top: 45rpx;
+	left: 5%;
+	z-index: -1;
+}
