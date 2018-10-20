@@ -9,3 +9,22 @@
   1. wx. getUserInfo()   注意授权问题
   2. 出现授权弹窗: <button open-type='getUserInfo'></button>
   3. 时机: onLoad
+## 页面操作注意事项
+  1. 修改状态: this.setData({});
+  2. 页面的实例this
+## 数据绑定
+  1. 初始化数据  data生成
+  2. 页面获取data中的数据: {{}}
+## 列表渲染
+  1. 语法: wx:for='{{array}}'
+  2. 默认: 下标:index 个体: item
+  3. wx:key: 唯一值，用于提高性能
+## <font color=red>react和vue性能对比</font>
+  1. react: DOM DIFF算法，最小化页面重绘
+  2. vue: 文档碎片，降低渲染的次数
+## 模板
+  1. 定义: template name='模板名'
+  2. 使用: template is='模板名'
+  3. 引入
+    1. 结构: <import src='路径'>
+    2. 样式: @import '路径'

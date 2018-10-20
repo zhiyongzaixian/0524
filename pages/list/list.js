@@ -18,6 +18,15 @@ Page({
 		this.setData({listArr: listArr.list_data});
   },
 
+	toDetail(event){
+		console.log(event);
+		//  获取对应的下标
+		let index = event.currentTarget.dataset.index
+		// 跳转到详情页detail
+		wx.navigateTo({
+			url: '/pages/detail/detail?index=' + index,
+		})
+	},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
