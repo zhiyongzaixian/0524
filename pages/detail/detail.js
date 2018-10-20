@@ -1,5 +1,7 @@
 // pages/detail/detail.js
 let listArr = require('../../datas/list-data.js');
+let appData = getApp();
+console.log(appData, typeof appData);
 Page({
 
   /**
@@ -8,7 +10,8 @@ Page({
   data: {
 		detailObj: {},
 		index: null,
-		isCollected: false
+		isCollected: false,
+		isMusicPlay: false  // 标识音乐是否播放
   },
 
   /**
@@ -31,6 +34,32 @@ Page({
 		// 思考： oldStorage[index] ---> true || false || undefined
 		this.setData({
 			isCollected: oldStorage[index]? true:false
+		})
+
+		// 预处理音乐是否在播放
+		if (appData.data.pageIndex === index && appData.data.isPlay){
+			this.setData({
+				isMusicPlay: true
+			});
+		}
+		// 监听音乐的播放和暂停
+		wx.onBackgroundAudioPlay(() => {
+			console.log('音乐播放');
+			this.setData({
+				isMusicPlay: true
+			});
+
+			appData.data.pageIndex = index;
+			appData.data.isPlay = true;
+		})
+		// 暂停
+		wx.onBackgroundAudioPause(() => {
+			console.log('音乐暂停');
+			this.setData({
+				isMusicPlay: false
+			});
+			
+			appData.data.isPlay = false;
 		})
   },
 	// 处理收藏的方法
@@ -57,6 +86,24 @@ Page({
 
 			}
 		})
+	},
+	// 处理音乐播放的方法
+	handleMusicPlay(){
+		let isMusicPlay = !this.data.isMusicPlay;
+		this.setData({
+			isMusicPlay
+		});
+
+		let {dataUrl, title} = this.data.detailObj.music;
+		if (isMusicPlay){
+			wx.playBackgroundAudio({
+				dataUrl,
+				title
+			})
+
+		}else {
+			wx.pauseBackgroundAudio()
+		}
 	},
 
   /**
