@@ -1,0 +1,4 @@
+<!--pages/movieDetail/movieDetail.wxml-->
+<view>
+	<text>{{msg}}</text>
+</view>
