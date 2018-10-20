@@ -28,3 +28,11 @@
   3. 引入
     1. 结构: <import src='路径'>
     2. 样式: @import '路径'
+
+
+## 本地存储
+  1. 语法: wx.setStorage || wx.getStorageSync()
+  2. 思路:
+    1. 存储目标： {0: true, 1: false}
+    2. 初始化的时候: 空 ---> 预处理 ---> 提前往本地缓存一个空对象{} ---> oldStorage[index]不报错
+    3. 页面加载的时候先去本地读取缓存数据更新状态: this.setData({isCollected: 本地存储的状态值})
